@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AIaiAmp导航</string>
+    <string name="search_hint">搜索目的地、地点或地址</string>
+    <string name="btn_route">路线</string>
+    <string name="btn_navi">导航</string>
+    <string name="btn_start_navi">开始导航</string>
+    <string name="btn_sim_navi">模拟导航</string>
+    <string name="my_location">我的位置</string>
+    <string name="destination">目的地</string>
+    <string name="route_fast">最快路线</string>
+    <string name="route_short">最短路线</string>
+    <string name="route_avoid_highway">不走高速</string>
+    <string name="distance">距离</string>
+    <string name="duration">预计时间</string>
+    <string name="toll">过路费</string>
+    <string name="traffic_light">红绿灯</string>
+    <string name="km">公里</string>
+    <string name="min">分钟</string>
+    <string name="yuan">元</string>
+</resources>

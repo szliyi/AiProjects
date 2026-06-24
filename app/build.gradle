@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.aiamp.navigation'
+    compileSdk 34
+
+    signingConfigs {
+        platform {
+            storeFile file('../platform.jks')
+            storePassword '123456'
+            keyAlias 'c318platform'
+            keyPassword '123456'
+            v1SigningEnabled true
+            v2SigningEnabled false
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.aiamp.navigation"
+        minSdk 28
+        targetSdk 28
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters 'arm64-v8a'
+        }
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.platform
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            signingConfig signingConfigs.platform
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        exclude 'META-INF/*.version'
+        exclude 'META-INF/services/*'
+    }
+}
+
+dependencies {
+    // AndroidX Core
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // FlexboxLayout (用于历史搜索标签流式布局)
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    // 高德地图SDK - 3D地图合包(包含3D地图+定位+搜索)
+    implementation 'com.amap.api:3dmap-location-search:latest.integration'
+
+    // Gson for JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+}

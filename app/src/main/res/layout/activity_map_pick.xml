@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- 地图容器 -->
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapPickView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 顶部栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/primary"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/ivMapPickBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_back"
+            android:contentDescription="返回"
+            android:padding="4dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="地图选点"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 地图中心十字标记 - 屏幕固定不动，地图在下方滑动 -->
+    <ImageView
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_location_pin"
+        android:alpha="0.9"
+        android:contentDescription="选中位置标记"
+        android:elevation="4dp" />
+
+    <!-- 底部地址信息栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="16dp">
+
+        <!-- 提示文字 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已选位置"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp" />
+
+        <!-- 选中地址 -->
+        <TextView
+            android:id="@+id/tvPickedAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="正在获取地址..."
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <!-- 确认按钮 -->
+        <TextView
+            android:id="@+id/tvMapPickConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="确认选点"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/bg_tab_selected"
+            android:alpha="0.5"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+</FrameLayout>

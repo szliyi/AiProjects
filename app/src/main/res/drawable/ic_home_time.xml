@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 月亮图标（回家） -->
+    <path
+        android:fillColor="#5C6BC0"
+        android:pathData="M12.5,3C7.81,3 4,6.81 4,11.5C4,16.19 7.81,20 12.5,20c0.95,0 1.87-0.17 2.73-0.47C12.91,18.33 11.5,15.6 11.5,12.5s1.41-5.83 3.73-7.03C14.37,3.17 13.45,3 12.5,3z" />
+</vector>
